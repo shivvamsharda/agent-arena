@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #0F1419;
+  --bg-surface: #1C2128;
+  --bg-elevated: #262C36;
+
+  /* Text */
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-tertiary: #6E7681;
+
+  /* P&L Colors */
+  --color-profit: #00D4AA;    /* Vibrant teal */
+  --color-loss: #F87171;      /* Coral red */
+  --color-warning: #FF9500;
+  --color-info: #2196F3;
+  --color-neutral: #6B7280;
+
+  /* AI Model Colors (5 models) */
+  --model-deepseek: #0EA5E9;    /* Electric Blue */
+  --model-gpt5: #10B981;        /* Emerald Green */
+  --model-sonnet: #F97316;      /* Sunrise Orange */
+  --model-gemini: #EC4899;      /* Neon Pink */
+  --model-grok: #8B5CF6;        /* Cyber Violet */
+
+  /* Bitcoin baseline */
+  --bitcoin: #6B7280;
+
+  /* Font Families */
+  --font-ui: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+  --font-data: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
+
+  /* Easing */
+  --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Durations */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 400ms;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Enable tabular numerals for all numbers */
+.number,
+.font-data {
+  font-feature-settings: "tnum" 1, "lnum" 1;
+}
+
+/* Focus styles for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--color-info);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+/* Utility classes */
+.positive {
+  color: var(--color-profit);
+}
+
+.negative {
+  color: var(--color-loss);
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-surface) 0%,
+    var(--bg-elevated) 50%,
+    var(--bg-surface) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 4px;
+}
