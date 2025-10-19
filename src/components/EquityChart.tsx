@@ -4,7 +4,7 @@ import { useArenaStore } from '../store/useArenaStore';
 import { formatCurrency } from '../utils/format';
 
 const EquityChart = () => {
-  const { equityCurve, models } = useArenaStore();
+  const { equityCurve } = useArenaStore();
   const [hoveredModel, setHoveredModel] = useState<string | null>(null);
 
   // Transform equity data for chart

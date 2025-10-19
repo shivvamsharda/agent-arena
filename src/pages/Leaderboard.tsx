@@ -4,7 +4,6 @@ import { ArrowUp, ArrowDown, Trophy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useArenaStore } from '../store/useArenaStore';
 import { formatCurrency, formatPercentage } from '../utils/format';
-import { LeaderboardModel } from '../types/models';
 
 type SortKey = 'rank' | 'returnPercentage' | 'totalPnL' | 'winRate' | 'sharpeRatio' | 'totalTrades';
 type SortOrder = 'asc' | 'desc';

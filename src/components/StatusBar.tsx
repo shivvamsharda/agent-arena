@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Wallet, Wifi } from 'lucide-react';
+import { Wallet } from 'lucide-react';
 import { useArenaStore } from '../store/useArenaStore';
 import { formatCurrency } from '../utils/format';
 
