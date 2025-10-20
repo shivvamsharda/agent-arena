@@ -72,7 +72,7 @@ const Navbar = () => {
             ))}
 
             {/* Models Dropdown */}
-            <div className="relative ml-2" ref={dropdownRef}>
+            <div className="relative ml-2 z-50" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold font-ui text-sm text-text-secondary hover:text-text-primary hover:bg-bg-elevated transition-all"
