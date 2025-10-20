@@ -3,47 +3,47 @@
 @tailwind utilities;
 
 :root {
-  /* Backgrounds */
-  --bg-primary: #0F1419;
-  --bg-surface: #1C2128;
-  --bg-elevated: #262C36;
+  /* Near-black gradient backgrounds - brutalist minimal */
+  --bg-primary: #0a0a0a;
+  --bg-surface: #121212;
+  --bg-elevated: #1a1a1a;
 
-  /* Text */
-  --text-primary: #E6EDF3;
-  --text-secondary: #8B949E;
-  --text-tertiary: #6E7681;
+  /* Text - stark contrast */
+  --text-primary: #ffffff;
+  --text-secondary: #a8a8a8;
+  --text-tertiary: #6a6a6a;
 
-  /* P&L Colors */
-  --color-profit: #00D4AA;    /* Vibrant teal */
-  --color-loss: #F87171;      /* Coral red */
-  --color-warning: #FF9500;
-  --color-info: #2196F3;
-  --color-neutral: #6B7280;
+  /* Warm Pastel Accents (no purple, blue, or pink) */
+  --color-profit: #c7f5d9;    /* Mint green */
+  --color-loss: #ffb8a3;      /* Coral pastel */
+  --color-warning: #f5d99f;   /* Soft amber */
+  --color-info: #ffd4a3;      /* Peach */
+  --color-neutral: #6a6a6a;
 
-  /* AI Model Colors (5 models) */
-  --model-deepseek: #0EA5E9;    /* Electric Blue */
-  --model-gpt5: #10B981;        /* Emerald Green */
-  --model-sonnet: #F97316;      /* Sunrise Orange */
-  --model-gemini: #EC4899;      /* Neon Pink */
-  --model-grok: #8B5CF6;        /* Cyber Violet */
+  /* AI Model Colors - Warm Pastels Only */
+  --model-deepseek: #c7f5d9;    /* Mint */
+  --model-gpt5: #ffd4a3;        /* Peach */
+  --model-sonnet: #ffb8a3;      /* Coral */
+  --model-gemini: #d4e5d0;      /* Sage */
+  --model-grok: #f5d99f;        /* Amber */
 
   /* Bitcoin baseline */
-  --bitcoin: #6B7280;
+  --bitcoin: #4a4a4a;
 
-  /* Font Families */
-  --font-ui: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+  /* Font Families - emphasis on monospace for brutalism */
+  --font-ui: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
   --font-data: 'JetBrains Mono', 'SF Mono', 'Consolas', monospace;
 
-  /* Easing */
+  /* Easing - minimal or instant for brutalism */
   --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
   --ease-in: cubic-bezier(0.32, 0, 0.67, 0);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
 
-  /* Durations */
-  --duration-instant: 100ms;
-  --duration-fast: 200ms;
-  --duration-normal: 300ms;
-  --duration-slow: 400ms;
+  /* Durations - reduced for minimal aesthetic */
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 150ms;
+  --duration-slow: 200ms;
 }
 
 * {
@@ -54,10 +54,12 @@
 
 body {
   font-family: var(--font-ui);
-  background-color: var(--bg-primary);
+  background: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.02em;
 }
 
 /* Enable tabular numerals for all numbers */
@@ -66,11 +68,11 @@ body {
   font-feature-settings: "tnum" 1, "lnum" 1;
 }
 
-/* Focus styles for accessibility */
+/* Focus styles for accessibility - brutalist */
 *:focus-visible {
   outline: 2px solid var(--color-info);
   outline-offset: 2px;
-  border-radius: 4px;
+  border-radius: 0;
 }
 
 /* Reduced motion */
