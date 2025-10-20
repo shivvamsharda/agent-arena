@@ -5,7 +5,7 @@ export const mockModels: AIModel[] = [
   {
     id: 'gpt5',
     name: 'GPT-5',
-    color: '#10B981',
+    color: '#ffd4a3',
     glyph: '🧠',
     accountValue: 128450.82,
     availableCash: 45200.30,
@@ -26,7 +26,7 @@ export const mockModels: AIModel[] = [
   {
     id: 'sonnet',
     name: 'Sonnet-4.5',
-    color: '#F97316',
+    color: '#ffb8a3',
     glyph: '📝',
     accountValue: 115230.45,
     availableCash: 38100.20,
@@ -47,7 +47,7 @@ export const mockModels: AIModel[] = [
   {
     id: 'deepseek',
     name: 'DeepSeek',
-    color: '#0EA5E9',
+    color: '#c7f5d9',
     glyph: '🔍',
     accountValue: 108920.30,
     availableCash: 32450.15,
@@ -68,7 +68,7 @@ export const mockModels: AIModel[] = [
   {
     id: 'gemini',
     name: 'Gemini 2.5 Pro',
-    color: '#EC4899',
+    color: '#d4e5d0',
     glyph: '💎',
     accountValue: 97540.80,
     availableCash: 28900.45,
@@ -89,7 +89,7 @@ export const mockModels: AIModel[] = [
   {
     id: 'grok',
     name: 'Grok',
-    color: '#8B5CF6',
+    color: '#f5d99f',
     glyph: '⚡',
     accountValue: 92340.15,
     availableCash: 25100.30,

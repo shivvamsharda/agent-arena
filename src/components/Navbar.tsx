@@ -32,18 +32,18 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="hidden lg:block border-b border-white/10 bg-bg-surface/40 backdrop-blur-lg relative z-50">
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+    <nav className="hidden lg:block border-b-2 border-white/20 bg-bg-surface relative z-50">
+      <div className="container mx-auto px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Logo/Brand */}
-          <div className="flex items-center gap-2">
-            <div className="text-2xl">⚡</div>
+          <div className="flex items-center gap-4">
+            <div className="text-2xl border-2 border-white/30 w-12 h-12 flex items-center justify-center">⚡</div>
             <div>
-              <h1 className="text-xl font-bold font-ui text-text-primary">
-                Agent Arena
+              <h1 className="text-base font-bold font-data text-text-primary uppercase tracking-widest">
+                AGENT ARENA
               </h1>
-              <p className="text-xs text-text-secondary font-ui">
-                AI Trading Pool
+              <p className="text-xs text-text-tertiary font-data uppercase tracking-wider">
+                AI TRADING POOL
               </p>
             </div>
           </div>
@@ -55,16 +55,16 @@ const Navbar = () => {
                 key={item.path}
                 to={item.path}
                 className={({ isActive }) =>
-                  `flex items-center gap-2 px-4 py-2 rounded-lg font-semibold font-ui text-sm transition-all ${
+                  `flex items-center gap-3 px-5 py-3 font-bold font-data text-xs uppercase tracking-widest ${
                     isActive
-                      ? 'bg-profit/20 text-profit border border-profit/50'
-                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-elevated'
+                      ? 'bg-profit text-bg-primary border-2 border-profit'
+                      : 'text-text-secondary hover:text-text-primary border-2 border-transparent hover:border-white/20'
                   }`
                 }
               >
                 {({ isActive }) => (
                   <>
-                    <item.icon className={`w-4 h-4 ${isActive ? 'text-profit' : ''}`} />
+                    <item.icon className={`w-4 h-4 ${isActive ? 'text-bg-primary' : ''}`} />
                     {item.label}
                   </>
                 )}
@@ -75,10 +75,10 @@ const Navbar = () => {
             <div className="relative ml-2 z-50" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg font-semibold font-ui text-sm text-text-secondary hover:text-text-primary hover:bg-bg-elevated transition-all"
+                className="flex items-center gap-3 px-5 py-3 font-bold font-data text-xs uppercase tracking-widest text-text-secondary hover:text-text-primary border-2 border-transparent hover:border-white/20"
               >
                 <Users className="w-4 h-4" />
-                Models
+                MODELS
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     isDropdownOpen ? 'rotate-180' : ''
@@ -98,27 +98,27 @@ const Navbar = () => {
 
               {/* Dropdown Menu */}
               {isDropdownOpen && (
-                <div className="absolute top-full mt-2 w-56 bg-bg-surface/95 backdrop-blur-xl border border-white/10 rounded-xl shadow-xl overflow-hidden z-50">
+                <div className="absolute top-full mt-2 w-64 bg-bg-surface border-2 border-white/20 overflow-hidden z-50">
                   {models.map((model) => (
                     <button
                       key={model.id}
                       onClick={() => handleModelClick(model.id)}
-                      className="w-full px-4 py-3 flex items-center gap-3 hover:bg-white/5 transition-colors text-left"
+                      className="w-full px-5 py-4 flex items-center gap-4 hover:bg-white/10 border-b border-white/10 last:border-b-0 text-left"
                     >
                       <span style={{ color: model.color }} className="text-xl">
                         {model.glyph}
                       </span>
                       <div className="flex-1">
-                        <div className="font-semibold font-ui text-text-primary text-sm">
+                        <div className="font-bold font-data text-text-primary text-xs uppercase tracking-wider">
                           {model.name}
                         </div>
-                        <div className="text-xs text-text-secondary font-ui">
+                        <div className="text-xs text-text-tertiary font-data mt-1">
                           {model.returnPercentage >= 0 ? '+' : ''}
-                          {model.returnPercentage.toFixed(2)}% return
+                          {model.returnPercentage.toFixed(2)}%
                         </div>
                       </div>
                       <div
-                        className={`text-xs font-data font-semibold ${
+                        className={`text-xs font-data font-bold ${
                           model.returnPercentage >= 0 ? 'text-profit' : 'text-loss'
                         }`}
                       >
@@ -132,15 +132,15 @@ const Navbar = () => {
           </div>
 
           {/* Right Actions */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             <button
               onClick={() => navigate('/deposit')}
-              className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-white text-black border border-white hover:bg-white/90 transition-all"
+              className="px-6 py-3 font-bold font-data text-xs uppercase tracking-widest bg-info text-bg-primary border-2 border-info hover:bg-warning hover:border-warning"
             >
-              Deposit
+              DEPOSIT
             </button>
-            <button className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-white text-black border border-white hover:bg-white/90 transition-all">
-              Connect Wallet
+            <button className="px-6 py-3 font-bold font-data text-xs uppercase tracking-widest bg-transparent text-text-primary border-2 border-white/30 hover:border-white/50">
+              CONNECT
             </button>
           </div>
         </div>
