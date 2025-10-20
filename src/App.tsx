@@ -6,6 +6,7 @@ import Navigation from './components/Navigation';
 import Live from './pages/Live';
 import Leaderboard from './pages/Leaderboard';
 import ModelDetail from './pages/ModelDetail';
+import Deposit from './pages/Deposit';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Live />} />
             <Route path="/leaderboard" element={<Leaderboard />} />
+            <Route path="/deposit" element={<Deposit />} />
             <Route path="/model/:modelId" element={<ModelDetail />} />
           </Routes>
         </main>
