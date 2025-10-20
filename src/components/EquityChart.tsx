@@ -22,30 +22,30 @@ const EquityChart = () => {
   }));
 
   const modelLines = [
-    { key: 'DeepSeek', color: '#0EA5E9', id: 'deepseek' },
-    { key: 'GPT-5', color: '#10B981', id: 'gpt5' },
-    { key: 'Sonnet-4.5', color: '#F97316', id: 'sonnet' },
-    { key: 'Gemini 2.5 Pro', color: '#EC4899', id: 'gemini' },
-    { key: 'Grok', color: '#8B5CF6', id: 'grok' },
+    { key: 'DeepSeek', color: '#c7f5d9', id: 'deepseek' },
+    { key: 'GPT-5', color: '#ffd4a3', id: 'gpt5' },
+    { key: 'Sonnet-4.5', color: '#ffb8a3', id: 'sonnet' },
+    { key: 'Gemini 2.5 Pro', color: '#d4e5d0', id: 'gemini' },
+    { key: 'Grok', color: '#f5d99f', id: 'grok' },
   ];
 
   return (
-    <div className="bg-bg-surface/60 backdrop-blur-xl border border-white/10 rounded-xl p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="bg-bg-surface border-2 border-white/10 p-8">
+      <div className="flex items-center justify-between mb-8 pb-4 border-b-2 border-white/20">
         <div>
-          <h2 className="text-xl font-semibold font-ui text-text-primary">
-            Multi-Model Equity Curve
+          <h2 className="text-sm font-bold font-data text-text-primary uppercase tracking-widest">
+            MULTI-MODEL EQUITY CURVE
           </h2>
-          <p className="text-sm text-text-secondary font-ui mt-1">
-            Last 72 hours performance
+          <p className="text-xs text-text-tertiary font-data mt-2 uppercase tracking-wider">
+            72H PERFORMANCE
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <button className="px-3 py-1.5 text-xs font-semibold font-ui rounded-lg bg-profit/20 text-profit border border-profit/50">
+        <div className="flex items-center gap-3">
+          <button className="px-4 py-2 text-xs font-bold font-data bg-profit text-bg-primary border-2 border-profit uppercase tracking-widest">
             72H
           </button>
-          <button className="px-3 py-1.5 text-xs font-semibold font-ui rounded-lg bg-bg-elevated text-text-secondary border border-white/10 hover:border-white/20">
+          <button className="px-4 py-2 text-xs font-bold font-data bg-bg-elevated text-text-secondary border-2 border-white/20 hover:border-white/40 uppercase tracking-widest">
             ALL
           </button>
         </div>
@@ -68,28 +68,29 @@ const EquityChart = () => {
             onMouseLeave={() => setHoveredModel(null)}
           >
             <CartesianGrid
-              stroke="rgba(255, 255, 255, 0.05)"
-              strokeDasharray="3 3"
+              stroke="rgba(255, 255, 255, 0.08)"
+              strokeDasharray="0"
             />
             <XAxis
               dataKey="timestamp"
-              stroke="#8B949E"
-              tick={{ fill: '#8B949E', fontSize: 11 }}
+              stroke="#6a6a6a"
+              tick={{ fill: '#6a6a6a', fontSize: 10, fontFamily: 'JetBrains Mono' }}
               tickLine={false}
               interval="preserveStartEnd"
             />
             <YAxis
-              stroke="#8B949E"
-              tick={{ fill: '#8B949E', fontSize: 11 }}
+              stroke="#6a6a6a"
+              tick={{ fill: '#6a6a6a', fontSize: 10, fontFamily: 'JetBrains Mono' }}
               tickLine={false}
               tickFormatter={(value) => `$${(value / 1000).toFixed(0)}K`}
             />
             <Tooltip
               contentStyle={{
-                background: 'rgba(28, 33, 40, 0.95)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '8px',
-                color: '#E6EDF3',
+                background: '#121212',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                borderRadius: '0',
+                color: '#ffffff',
+                fontFamily: 'JetBrains Mono',
               }}
               formatter={(value: number, name: string) => [
                 formatCurrency(value, 0),
@@ -97,15 +98,14 @@ const EquityChart = () => {
               ]}
             />
 
-            {/* Bitcoin baseline - dashed gray */}
+            {/* Bitcoin baseline - solid gray */}
             <Line
               type="monotone"
               dataKey="Bitcoin"
-              stroke="#6B7280"
-              strokeWidth={1.5}
-              strokeDasharray="5 5"
+              stroke="#4a4a4a"
+              strokeWidth={1}
               dot={false}
-              opacity={0.5}
+              opacity={0.6}
               activeDot={false}
             />
 
@@ -116,22 +116,24 @@ const EquityChart = () => {
                 type="monotone"
                 dataKey={model.key}
                 stroke={model.color}
-                strokeWidth={hoveredModel === model.key ? 3 : 2}
+                strokeWidth={hoveredModel === model.key ? 2 : 1.5}
                 dot={false}
-                activeDot={{ r: 6 }}
+                activeDot={{ r: 4, fill: model.color, stroke: model.color }}
                 opacity={
                   hoveredModel === null || hoveredModel === model.key
                     ? 1
-                    : 0.4
+                    : 0.3
                 }
               />
             ))}
 
             <Legend
               wrapperStyle={{
-                paddingTop: '20px',
-                fontSize: '12px',
-                fontFamily: 'Space Grotesk',
+                paddingTop: '24px',
+                fontSize: '10px',
+                fontFamily: 'JetBrains Mono',
+                textTransform: 'uppercase',
+                letterSpacing: '0.1em',
               }}
             />
           </LineChart>
