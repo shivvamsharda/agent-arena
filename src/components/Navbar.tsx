@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="hidden lg:block border-b border-white/10 bg-bg-surface/40 backdrop-blur-lg">
+    <nav className="hidden lg:block border-b border-white/10 bg-bg-surface/40 backdrop-blur-lg relative z-50">
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Brand */}
