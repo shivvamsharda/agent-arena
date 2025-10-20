@@ -143,7 +143,7 @@ const Deposit = () => {
               disabled={depositValue <= 0 || !walletConnected}
               className={`w-full py-4 rounded-lg font-semibold font-ui text-lg transition-all flex items-center justify-center gap-2 ${
                 depositValue > 0 && walletConnected
-                  ? 'bg-white text-black hover:bg-white/90'
+                  ? 'bg-profit hover:bg-profit/90 text-white'
                   : 'bg-bg-elevated text-text-tertiary border border-white/10 cursor-not-allowed'
               }`}
             >
