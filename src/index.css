@@ -4,9 +4,9 @@
 
 :root {
   /* Backgrounds */
-  --bg-primary: #0F1419;
-  --bg-surface: #1C2128;
-  --bg-elevated: #262C36;
+  --bg-primary: #000000;
+  --bg-surface: #1a1a1a;
+  --bg-elevated: #2a2a2a;
 
   /* Text */
   --text-primary: #E6EDF3;
@@ -14,18 +14,18 @@
   --text-tertiary: #6E7681;
 
   /* P&L Colors */
-  --color-profit: #00D4AA;    /* Vibrant teal */
+  --color-profit: #9d4edd;    /* Light purple */
   --color-loss: #F87171;      /* Coral red */
   --color-warning: #FF9500;
   --color-info: #2196F3;
   --color-neutral: #6B7280;
 
   /* AI Model Colors (5 models) */
-  --model-deepseek: #0EA5E9;    /* Electric Blue */
-  --model-gpt5: #10B981;        /* Emerald Green */
+  --model-deepseek: #7209b7;    /* Medium Purple */
+  --model-gpt5: #9d4edd;        /* Light Purple */
   --model-sonnet: #F97316;      /* Sunrise Orange */
-  --model-gemini: #EC4899;      /* Neon Pink */
-  --model-grok: #8B5CF6;        /* Cyber Violet */
+  --model-gemini: #c77dff;      /* Lavender */
+  --model-grok: #480ca8;        /* Dark Purple */
 
   /* Bitcoin baseline */
   --bitcoin: #6B7280;

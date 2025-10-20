@@ -7,10 +7,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Backgrounds (Deep Slate)
-        'bg-primary': '#0F1419',
-        'bg-surface': '#1C2128',
-        'bg-elevated': '#262C36',
+        // Backgrounds (Black & Charcoal)
+        'bg-primary': '#000000',
+        'bg-surface': '#1a1a1a',
+        'bg-elevated': '#2a2a2a',
 
         // Text (Off-white spectrum)
         'text-primary': '#E6EDF3',
@@ -18,7 +18,7 @@ export default {
         'text-tertiary': '#6E7681',
 
         // P&L Colors
-        'profit': '#00D4AA',      // Vibrant teal
+        'profit': '#9d4edd',      // Light purple
         'loss': '#F87171',        // Coral red
 
         // System Colors
@@ -27,11 +27,11 @@ export default {
         'neutral': '#6B7280',
 
         // AI Model Colors (5 models)
-        'deepseek': '#0EA5E9',    // Electric Blue
-        'gpt5': '#10B981',        // Emerald Green
+        'deepseek': '#7209b7',    // Medium Purple
+        'gpt5': '#9d4edd',        // Light Purple
         'sonnet': '#F97316',      // Sunrise Orange
-        'gemini': '#EC4899',      // Neon Pink
-        'grok': '#8B5CF6',        // Cyber Violet
+        'gemini': '#c77dff',      // Lavender
+        'grok': '#480ca8',        // Dark Purple
 
         // Bitcoin baseline
         'bitcoin': '#6B7280',     // Muted gray for baseline

@@ -135,11 +135,11 @@ const Navbar = () => {
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigate('/deposit')}
-              className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-profit/20 text-profit border border-profit/50 hover:bg-profit/30 transition-all"
+              className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-white text-black border border-white hover:bg-white/90 transition-all"
             >
               Deposit
             </button>
-            <button className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-bg-elevated text-text-primary border border-white/10 hover:border-white/30 transition-all">
+            <button className="px-4 py-2 rounded-lg font-semibold font-ui text-sm bg-white text-black border border-white hover:bg-white/90 transition-all">
               Connect Wallet
             </button>
           </div>
