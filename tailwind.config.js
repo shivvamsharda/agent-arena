@@ -7,37 +7,37 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Near-black gradient backgrounds - brutalist minimal
-        'bg-primary': '#0a0a0a',
-        'bg-surface': '#121212',
-        'bg-elevated': '#1a1a1a',
+        // Backgrounds (Deep Slate)
+        'bg-primary': '#0F1419',
+        'bg-surface': '#1C2128',
+        'bg-elevated': '#262C36',
 
-        // Text - stark contrast
-        'text-primary': '#ffffff',
-        'text-secondary': '#a8a8a8',
-        'text-tertiary': '#6a6a6a',
+        // Text (Off-white spectrum)
+        'text-primary': '#E6EDF3',
+        'text-secondary': '#8B949E',
+        'text-tertiary': '#6E7681',
 
-        // Warm Pastel Accents (no purple, blue, or pink)
-        'profit': '#c7f5d9',      // Mint green
-        'loss': '#ffb8a3',        // Coral pastel
+        // P&L Colors
+        'profit': '#00D4AA',      // Vibrant teal
+        'loss': '#F87171',        // Coral red
 
-        // System Colors - Warm Pastels
-        'warning': '#f5d99f',     // Soft amber
-        'info': '#ffd4a3',        // Peach
-        'neutral': '#6a6a6a',
+        // System Colors
+        'warning': '#FF9500',
+        'info': '#2196F3',
+        'neutral': '#6B7280',
 
-        // AI Model Colors - Warm Pastels Only
-        'deepseek': '#c7f5d9',    // Mint
-        'gpt5': '#ffd4a3',        // Peach
-        'sonnet': '#ffb8a3',      // Coral
-        'gemini': '#d4e5d0',      // Sage
-        'grok': '#f5d99f',        // Amber
+        // AI Model Colors (5 models)
+        'deepseek': '#0EA5E9',    // Electric Blue
+        'gpt5': '#10B981',        // Emerald Green
+        'sonnet': '#F97316',      // Sunrise Orange
+        'gemini': '#EC4899',      // Neon Pink
+        'grok': '#8B5CF6',        // Cyber Violet
 
         // Bitcoin baseline
-        'bitcoin': '#4a4a4a',
+        'bitcoin': '#6B7280',     // Muted gray for baseline
       },
       fontFamily: {
-        'ui': ['JetBrains Mono', 'SF Mono', 'Consolas', 'monospace'],
+        'ui': ['Space Grotesk', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
         'data': ['JetBrains Mono', 'SF Mono', 'Consolas', 'monospace'],
       },
       fontSize: {
@@ -50,17 +50,24 @@ export default {
         '3xl': '48px',
       },
       animation: {
-        'pulse-fast': 'pulse 2s ease-in-out infinite',
-        'pulse-slow': 'pulse 4s ease-in-out infinite',
+        'pulse-fast': 'pulse 1s ease-in-out infinite',
+        'pulse-slow': 'pulse 3s ease-in-out infinite',
+        'shimmer': 'shimmer 1.5s infinite',
+        'flash-positive': 'flash-positive 300ms ease-out',
       },
-      borderRadius: {
-        'none': '0',
-        'sm': '2px',
-        'DEFAULT': '2px',
-        'md': '2px',
-        'lg': '2px',
-        'xl': '2px',
-        '2xl': '2px',
+      keyframes: {
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
+        },
+        'flash-positive': {
+          '0%': { backgroundColor: 'transparent' },
+          '50%': { backgroundColor: 'rgba(0, 212, 170, 0.2)' },
+          '100%': { backgroundColor: 'transparent' },
+        }
+      },
+      backdropBlur: {
+        'xl': '20px',
       }
     },
   },

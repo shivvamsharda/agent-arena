@@ -51,91 +51,91 @@ const Leaderboard = () => {
   const winner = sortedLeaderboard[0];
 
   return (
-    <div className="container mx-auto px-8 py-12">
+    <div className="container mx-auto px-4 lg:px-6 py-6 lg:py-8">
       {/* Header */}
-      <div className="mb-12 pb-6 border-b-2 border-white/20">
-        <h1 className="text-xl font-bold font-data text-text-primary uppercase tracking-widest mb-3">
-          LEADERBOARD
+      <div className="mb-8">
+        <h1 className="text-2xl lg:text-3xl font-bold font-ui text-text-primary mb-2">
+          Leaderboard
         </h1>
-        <p className="text-text-tertiary font-data text-sm uppercase tracking-wider">
-          COMPETITIVE SNAPSHOT - LIVE RANKINGS
+        <p className="text-text-secondary font-ui">
+          Competitive snapshot with live rankings
         </p>
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-6 mb-8 border-b-2 border-white/20">
+      <div className="flex gap-4 mb-6 border-b border-white/10">
         <button
           onClick={() => setActiveTab('overall')}
-          className={`px-6 py-4 font-bold font-data text-xs uppercase tracking-widest ${
+          className={`px-4 py-2 font-semibold font-ui transition-colors ${
             activeTab === 'overall'
-              ? 'text-bg-primary bg-profit border-b-4 border-profit'
-              : 'text-text-secondary hover:text-text-primary border-b-4 border-transparent'
+              ? 'text-profit border-b-2 border-profit'
+              : 'text-text-secondary hover:text-text-primary'
           }`}
         >
-          OVERALL
+          Overall Stats
         </button>
         <button
           onClick={() => setActiveTab('advanced')}
-          className={`px-6 py-4 font-bold font-data text-xs uppercase tracking-widest ${
+          className={`px-4 py-2 font-semibold font-ui transition-colors ${
             activeTab === 'advanced'
-              ? 'text-bg-primary bg-profit border-b-4 border-profit'
-              : 'text-text-secondary hover:text-text-primary border-b-4 border-transparent'
+              ? 'text-profit border-b-2 border-profit'
+              : 'text-text-secondary hover:text-text-primary'
           }`}
         >
-          ADVANCED
+          Advanced Analytics
         </button>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* Left Panel: Winning Model */}
         <div className="lg:col-span-1">
-          <div className="bg-bg-surface border-2 border-white/10 p-8">
-            <div className="flex items-center gap-3 mb-6 pb-4 border-b-2 border-white/20">
+          <div className="bg-bg-surface/60 backdrop-blur-xl border border-white/10 rounded-xl p-6">
+            <div className="flex items-center gap-2 mb-4">
               <Trophy className="w-5 h-5 text-warning" />
-              <h3 className="text-sm font-bold font-data text-text-primary uppercase tracking-widest">
-                WINNER
+              <h3 className="text-lg font-semibold font-ui text-text-primary">
+                Winning Model
               </h3>
             </div>
 
             {winner && (
               <div>
                 <div
-                  className="text-4xl mb-4 border-2 w-16 h-16 flex items-center justify-center"
-                  style={{ borderColor: winner.color, backgroundColor: winner.color + '20' }}
+                  className="text-3xl mb-2"
+                  style={{ color: winner.color }}
                 >
                   {winner.glyph}
                 </div>
-                <h4 className="text-base font-bold font-data text-text-primary mb-6 uppercase tracking-wider">
+                <h4 className="text-xl font-bold font-ui text-text-primary mb-2">
                   {winner.name}
                 </h4>
-                <div className="space-y-4 text-sm">
-                  <div className="border border-white/10 p-3">
-                    <span className="text-text-tertiary font-data text-xs uppercase tracking-widest block mb-1">RETURN</span>
-                    <span className="font-data text-profit font-bold text-lg">
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-text-secondary font-ui">Return</span>
+                    <span className="font-data text-profit">
                       +{winner.returnPercentage.toFixed(2)}%
                     </span>
                   </div>
-                  <div className="border border-white/10 p-3">
-                    <span className="text-text-tertiary font-data text-xs uppercase tracking-widest block mb-1">VALUE</span>
-                    <span className="font-data text-text-primary font-bold text-lg">
+                  <div className="flex justify-between">
+                    <span className="text-text-secondary font-ui">Value</span>
+                    <span className="font-data text-text-primary">
                       {formatCurrency(winner.accountValue, 0)}
                     </span>
                   </div>
-                  <div className="border border-white/10 p-3">
-                    <span className="text-text-tertiary font-data text-xs uppercase tracking-widest block mb-1">WIN RATE</span>
-                    <span className="font-data text-text-primary font-bold text-lg">
+                  <div className="flex justify-between">
+                    <span className="text-text-secondary font-ui">Win Rate</span>
+                    <span className="font-data text-text-primary">
                       {winner.winRate.toFixed(1)}%
                     </span>
                   </div>
                 </div>
 
-                <div className="mt-6 pt-6 border-t-2 border-white/20">
-                  <div className="text-xs text-text-tertiary font-data mb-3 uppercase tracking-widest">
-                    ACTIVE
+                <div className="mt-4 pt-4 border-t border-white/10">
+                  <div className="text-xs text-text-secondary font-ui mb-2">
+                    Active Positions
                   </div>
-                  <div className="flex gap-3">
-                    <span className="text-xl border border-white/20 w-10 h-10 flex items-center justify-center">◎</span>
-                    <span className="text-xl border border-white/20 w-10 h-10 flex items-center justify-center">₿</span>
+                  <div className="flex gap-2">
+                    <span className="text-lg">◎</span>
+                    <span className="text-lg">₿</span>
                   </div>
                 </div>
               </div>
@@ -143,132 +143,132 @@ const Leaderboard = () => {
           </div>
 
           {/* Notes */}
-          <div className="mt-8 p-5 bg-bg-elevated border border-white/10">
-            <p className="text-xs text-text-tertiary font-data leading-relaxed uppercase tracking-wider">
-              COMPLETED TRADES ONLY
+          <div className="mt-6 p-4 bg-bg-surface/40 backdrop-blur-xl border border-white/10 rounded-xl">
+            <p className="text-xs text-text-secondary font-ui leading-relaxed">
+              All stats reflect completed trades only. Active positions excluded until closed.
             </p>
           </div>
         </div>
 
         {/* Main Table */}
         <div className="lg:col-span-3">
-          <div className="bg-bg-surface border-2 border-white/10 overflow-hidden">
+          <div className="bg-bg-surface/60 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden">
             <div className="overflow-x-auto">
               <table className="w-full">
                 <thead>
-                  <tr className="border-b-2 border-white/20 bg-bg-elevated">
+                  <tr className="border-b border-white/10 bg-bg-elevated/50">
                     <th
-                      className="px-5 py-4 text-left text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-left text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('rank')}
                     >
-                      <div className="flex items-center gap-2">
-                        RANK
+                      <div className="flex items-center gap-1">
+                        Rank
                         <SortIcon columnKey="rank" />
                       </div>
                     </th>
-                    <th className="px-5 py-4 text-left text-xs font-bold font-data text-text-tertiary uppercase tracking-widest">
-                      MODEL
+                    <th className="px-4 py-3 text-left text-xs font-semibold font-ui text-text-secondary">
+                      Model
                     </th>
-                    <th className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary uppercase tracking-widest">
-                      VALUE
+                    <th className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary">
+                      Acct Value
                     </th>
                     <th
-                      className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('returnPercentage')}
                     >
-                      <div className="flex items-center justify-end gap-2">
-                        RETURN
+                      <div className="flex items-center justify-end gap-1">
+                        Return %
                         <SortIcon columnKey="returnPercentage" />
                       </div>
                     </th>
                     <th
-                      className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('totalPnL')}
                     >
-                      <div className="flex items-center justify-end gap-2">
-                        P&L
+                      <div className="flex items-center justify-end gap-1">
+                        Total P&L
                         <SortIcon columnKey="totalPnL" />
                       </div>
                     </th>
                     <th
-                      className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('winRate')}
                     >
-                      <div className="flex items-center justify-end gap-2">
-                        WIN
+                      <div className="flex items-center justify-end gap-1">
+                        Win Rate
                         <SortIcon columnKey="winRate" />
                       </div>
                     </th>
                     <th
-                      className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('sharpeRatio')}
                     >
-                      <div className="flex items-center justify-end gap-2">
-                        SHARPE
+                      <div className="flex items-center justify-end gap-1">
+                        Sharpe
                         <SortIcon columnKey="sharpeRatio" />
                       </div>
                     </th>
                     <th
-                      className="px-5 py-4 text-right text-xs font-bold font-data text-text-tertiary cursor-pointer hover:text-text-primary uppercase tracking-widest"
+                      className="px-4 py-3 text-right text-xs font-semibold font-ui text-text-secondary cursor-pointer hover:text-text-primary"
                       onClick={() => handleSort('totalTrades')}
                     >
-                      <div className="flex items-center justify-end gap-2">
-                        TRADES
+                      <div className="flex items-center justify-end gap-1">
+                        Trades
                         <SortIcon columnKey="totalTrades" />
                       </div>
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {sortedLeaderboard.map((model) => (
+                  {sortedLeaderboard.map((model, index) => (
                     <motion.tr
                       key={model.id}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.1 }}
-                      className="border-b border-white/10 hover:bg-white/5 cursor-pointer"
+                      transition={{ duration: 0.2, delay: index * 0.05 }}
+                      className="border-b border-white/5 hover:bg-white/5 cursor-pointer transition-colors"
                       onClick={() => navigate(`/model/${model.id}`)}
                     >
-                      <td className="px-5 py-4">
-                        <div className="flex items-center gap-3">
-                          <span className="font-data text-text-primary font-bold">
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2">
+                          <span className="font-data text-text-primary">
                             #{model.rank}
                           </span>
                           {model.rank === 1 && <Trophy className="w-4 h-4 text-warning" />}
                         </div>
                       </td>
-                      <td className="px-5 py-4">
-                        <div className="flex items-center gap-3">
-                          <span className="text-lg border border-white/20 w-8 h-8 flex items-center justify-center" style={{ color: model.color }}>{model.glyph}</span>
-                          <span className="font-data font-bold text-text-primary uppercase tracking-wider text-sm">
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-2">
+                          <span style={{ color: model.color }}>{model.glyph}</span>
+                          <span className="font-ui font-semibold text-text-primary">
                             {model.name}
                           </span>
                         </div>
                       </td>
-                      <td className="px-5 py-4 text-right font-data text-text-primary font-bold">
+                      <td className="px-4 py-3 text-right font-data text-text-primary">
                         {formatCurrency(model.accountValue, 0)}
                       </td>
                       <td
-                        className={`px-5 py-4 text-right font-data font-bold ${
+                        className={`px-4 py-3 text-right font-data font-semibold ${
                           model.returnPercentage >= 0 ? 'text-profit' : 'text-loss'
                         }`}
                       >
                         {formatPercentage(model.returnPercentage, 2)}
                       </td>
                       <td
-                        className={`px-5 py-4 text-right font-data font-bold ${
+                        className={`px-4 py-3 text-right font-data ${
                           model.totalPnL >= 0 ? 'text-profit' : 'text-loss'
                         }`}
                       >
                         {formatCurrency(model.totalPnL)}
                       </td>
-                      <td className="px-5 py-4 text-right font-data text-text-primary font-bold">
+                      <td className="px-4 py-3 text-right font-data text-text-primary">
                         {model.winRate.toFixed(1)}%
                       </td>
-                      <td className="px-5 py-4 text-right font-data text-text-primary font-bold">
+                      <td className="px-4 py-3 text-right font-data text-text-primary">
                         {model.sharpeRatio.toFixed(2)}
                       </td>
-                      <td className="px-5 py-4 text-right font-data text-text-secondary font-bold">
+                      <td className="px-4 py-3 text-right font-data text-text-secondary">
                         {model.totalTrades}
                       </td>
                     </motion.tr>
@@ -279,27 +279,29 @@ const Leaderboard = () => {
           </div>
 
           {/* Model Bars */}
-          <div className="mt-8 grid grid-cols-5 gap-6">
+          <div className="mt-6 grid grid-cols-5 gap-4">
             {models.map((model) => (
               <div
                 key={model.id}
-                className="flex flex-col items-center cursor-pointer hover:opacity-80"
+                className="flex flex-col items-center cursor-pointer hover:opacity-80 transition-opacity"
                 onClick={() => navigate(`/model/${model.id}`)}
               >
-                <div className="w-full bg-bg-elevated border-2 border-white/10 overflow-hidden h-40 flex flex-col justify-end">
-                  <div
-                    className="w-full"
-                    style={{
-                      backgroundColor: model.color,
-                      height: `${(model.accountValue / 130000) * 100}%`
+                <div className="w-full bg-bg-elevated rounded-lg overflow-hidden h-32 flex flex-col justify-end">
+                  <motion.div
+                    initial={{ height: 0 }}
+                    animate={{
+                      height: `${(model.accountValue / 130000) * 100}%`,
                     }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                    className="w-full rounded-t-lg"
+                    style={{ backgroundColor: model.color }}
                   />
                 </div>
-                <div className="mt-3 text-center w-full">
-                  <div className="text-xs font-data text-text-tertiary uppercase tracking-wider mb-1">
+                <div className="mt-2 text-center">
+                  <div className="text-xs font-ui text-text-secondary">
                     {model.name}
                   </div>
-                  <div className="text-sm font-data text-text-primary font-bold">
+                  <div className="text-sm font-data text-text-primary">
                     {formatCurrency(model.accountValue, 0)}
                   </div>
                 </div>
